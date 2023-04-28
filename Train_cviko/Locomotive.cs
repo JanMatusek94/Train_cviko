@@ -12,7 +12,6 @@ namespace Train_cviko {
             get { return engine; }
             set { engine = value; }
         }
-
         public Locomotive() {
             driver = new Person("John", "Doe");
             engine = new Engine("Diesel");

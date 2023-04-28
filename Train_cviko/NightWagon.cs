@@ -19,6 +19,11 @@ namespace Train_cviko {
         public NightWagon(int numberOfChairs, int numberOfBeds) : base (numberOfChairs){
             this.numberOfBeds = numberOfBeds;
             beds = new Bed[numberOfBeds];
+            for (int i = 0; i < numberOfBeds; i++) {
+                beds[i] = new Bed();
+                beds[i].Number = i + 1;
+                beds[i].Reserved = false;
+            }
         }
         public override string ToString() {
             return $"Druh vagonu: {this.GetType().Name}, počet sedadel: {NumberOfChairs}, počet postelí: {numberOfBeds}";

@@ -13,7 +13,8 @@ namespace Train_cviko {
             get { return numberOfChairs; }
             set { numberOfChairs = value; }
         }
-        public List<Chair> Chairs { get { return chairs; } }
+        public List<Chair> Chairs { get { return chairs; } set { this.chairs = value; } }
+        public List<Door> Doors { get { return doors; } set { this.doors = value; } }
         public PersonalWagon(int numberOfChairs) {
             this.numberOfChairs = numberOfChairs;
             this.doors = new List<Door>();
@@ -21,7 +22,6 @@ namespace Train_cviko {
             for (int i = 1; i <= numberOfChairs; i++) {
                 chairs.Add(new Chair(i, false));
             }
-            
         }
         public void ConnectWagon(Train vlak) {
             if ((vlak.Locomotive.Engine.Type == "parní") && vlak.Wagons.Count >= 5) {
@@ -37,7 +37,6 @@ namespace Train_cviko {
             } else {
                 Console.WriteLine("Tento vagon není součástí tohoto vlaku.");
             }
-            
         }
     }
 }

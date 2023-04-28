@@ -36,8 +36,8 @@ namespace Train_cviko {
 
         public void ReserveChair(int wagonNumber, int seatNumber) {
             if ((wagons[wagonNumber].GetType() != typeof(Hopper))) {
-                if (wagonNumber <= wagons.Count) {
-                    if (seatNumber <= ((PersonalWagon)wagons[wagonNumber-1]).NumberOfChairs) {
+                if (wagonNumber <= wagons.Count && wagonNumber > 0) {
+                    if (seatNumber <= ((PersonalWagon)wagons[wagonNumber-1]).NumberOfChairs && seatNumber > 0) {
                         if (((PersonalWagon)wagons[wagonNumber-1]).Chairs[seatNumber-1].Reserved == false) {
                             ((PersonalWagon)wagons[wagonNumber-1]).Chairs[seatNumber-1].Reserved = true;
                             Console.WriteLine($"Křeslo {seatNumber} ve vagonu {wagonNumber} bylo rezervováno.");
@@ -69,7 +69,7 @@ namespace Train_cviko {
             }
         }
         public override string ToString() {
-            string str = "";
+            string str = $"{this.GetType().Name}: \n";
             foreach (IConnectionable wagon in wagons) {
                 str += wagon.ToString()+"\n";
             }

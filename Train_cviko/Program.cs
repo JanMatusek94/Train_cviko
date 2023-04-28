@@ -4,14 +4,13 @@ class Program {
         Person stew1 = new Person("Lenka", "Kozáková");
         EconomyWagon vagon1 = new EconomyWagon(50);
         BusinessWagon vagon2 = new BusinessWagon(stew1, 40);
-        NightWagon vagon3 = new NightWagon(50, 30);
+        NightWagon vagon3 = new NightWagon(2, 30);
         Hopper vagon4 = new Hopper(10);
         Person strojv1 = new Person("Karel", "Novák");
         Locomotive lok1 = new Locomotive(strojv1, new Engine("diesel"));
         Train vlak1 = new Train(lok1, new List<IConnectionable> {vagon1,
         vagon2, vagon3, vagon4});
         Hopper vagon5 = new Hopper(20);
-        vlak1.ConnectWagon(vagon5);
 
         Locomotive lok2 = new Locomotive(strojv1, new Engine("parní"));
         Train vlak2 = new Train(lok2, new List<IConnectionable> {
@@ -25,7 +24,10 @@ class Program {
         vlak1.ReserveChair(2, 40);
         vlak1.ReserveChair(1, 10);
         vlak1.ReserveChair(1, 10);
+
         vlak1.ListReservedChairs();
+        vlak2.DisconnectWagon(vagon5);
+        Console.WriteLine();
         Console.WriteLine(vlak1);
         Console.WriteLine(vlak2);
     }
