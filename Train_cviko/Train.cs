@@ -132,7 +132,6 @@ namespace Train_cviko {
       }
 
 		}
-
     public static bool operator ==(Train vlak1, Train vlak2) {
       if (vlak1.wagons.Count == vlak2.wagons.Count) { return true; }
       else { return false; }
