@@ -14,14 +14,14 @@ namespace Train_cviko {
         }
         public Locomotive() {
             driver = new Person("John", "Doe");
-            engine = new Engine("Diesel");
+            engine = Engine.dieselová;
         }
         public Locomotive(Person driver, Engine engine) {
             this.driver = driver;
             this.engine = engine;
         }
         public override string ToString() {
-            return $"Šofér lokomotivy: {driver}, endžín {engine}";
+            return $"Šofér lokomotivy: {driver}, endžín: {engine}";
         }
     }
 }

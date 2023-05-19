@@ -9,7 +9,7 @@ namespace Train_cviko {
         private bool nearWindow;
         private int number;
         private bool reserved;
-
+        public int reservedToCardNo;
         public bool NearWindow {
             get { return nearWindow; }
             set { nearWindow = value; }

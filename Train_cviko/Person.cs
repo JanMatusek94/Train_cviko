@@ -15,7 +15,7 @@ namespace Train_cviko {
             this.lastName = lastName;
         }
         public override string ToString() {
-            return $"Jméno: {firstName} {lastName}";
+            return $"{firstName} {lastName}";
         }
     }
 }

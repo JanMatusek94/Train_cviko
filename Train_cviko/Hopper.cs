@@ -15,7 +15,7 @@ namespace Train_cviko {
             loadingCapacity = tonnage;
         }
         public void ConnectWagon(Train vlak) {
-            if ((vlak.Locomotive.Engine.Type == "parní") && vlak.Wagons.Count >= 5) {
+            if ((vlak.Locomotive.Engine == Engine.parní)  && vlak.Wagons.Count >= 5) {
                 Console.WriteLine("Parní vlak může mít maximálně 5 vagonů");
             }
             else {
